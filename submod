@@ -81,7 +81,7 @@ update() {
 
 pull() {
     for dir in "$store"/*; do
-        git -C "$dir" checkout main
+        git -C "$dir" checkout main || git -C "$dir" checkout master
         git -C "$dir" pull &
     done
     wait
